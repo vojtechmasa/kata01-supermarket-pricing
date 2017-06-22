@@ -10,12 +10,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public final class Product {
   @Nonnull
   private final String name;
-  @Nonnull
   private final double unitPrice;
+  @Nonnull
+  private final ProductUnit productUnit;
 
-  public Product(String name, double unitPrice) {
+  public Product(String name, double unitPrice, ProductUnit productUnit) {
     this.name = name;
     this.unitPrice = unitPrice;
+    this.productUnit = productUnit;
   }
 
   @Nonnull
@@ -23,8 +25,16 @@ public final class Product {
     return name;
   }
 
-  @Nonnull
   public double unitPrice() {
     return unitPrice;
+  }
+
+  @Nonnull
+  public ProductUnit productUnit() {
+    return productUnit;
+  }
+
+  public boolean discrete() {
+    return productUnit().countingType() == CountingType.DISCRETE;
   }
 }
