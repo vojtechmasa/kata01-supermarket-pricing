@@ -1,5 +1,6 @@
 package product;
 
+import discount.NoDiscount;
 import org.junit.Test;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -11,7 +12,8 @@ public class QuantifiedProductShould {
   public void notBeCreated_ifItIsDiscreteAndHasNonIntegerQuantity() {
     new QuantifiedProduct(
         new Product("Popsicle", 10, ProductUnit.PIECE),
-        2.5
+        2.5,
+        new NoDiscount()
     );
   }
 
@@ -19,7 +21,8 @@ public class QuantifiedProductShould {
   public void beCreated_ifItIsDiscreteAndHasIntegerQuantity() {
     new QuantifiedProduct(
         new Product("Popsicle", 2.5, ProductUnit.PIECE),
-        3
+        3,
+        new NoDiscount()
     );
   }
 
@@ -27,7 +30,8 @@ public class QuantifiedProductShould {
   public void beCreated_ifItIsContinuousAndHasNonIntegerQuantity() {
     new QuantifiedProduct(
         new Product("Popsicle", 3, ProductUnit.KILOGRAM),
-        2.5
+        2.5,
+        new NoDiscount()
     );
   }
 }

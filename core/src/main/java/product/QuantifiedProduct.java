@@ -1,5 +1,8 @@
 package product;
 
+import discount.Discount;
+import discount.NoDiscount;
+
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.annotation.concurrent.Immutable;
@@ -8,14 +11,20 @@ import javax.annotation.concurrent.Immutable;
 @ParametersAreNonnullByDefault
 public class QuantifiedProduct {
   @Nonnull
+  private static final Discount NO_DISCOUNT = new NoDiscount();
+
+  @Nonnull
   private final Product product;
   private final double quantity;
+  @Nonnull
+  private final Discount discount;
 
-  public QuantifiedProduct(Product product, double quantity) {
+  public QuantifiedProduct(Product product, double quantity, Discount discount) {
     checkQuantity(product.discrete(), quantity);
 
     this.product = product;
     this.quantity = quantity;
+    this.discount = discount;
   }
 
   private static void checkQuantity(boolean discrete, double quantity) {
@@ -36,6 +45,14 @@ public class QuantifiedProduct {
   }
 
   public double price() {
-    return product().unitPrice() * quantity;
+    return NO_DISCOUNT.price(product().unitPrice(), quantity());
+  }
+
+  public double discountedPrice() {
+    return discount.price(product().unitPrice(), quantity());
+  }
+
+  public boolean discounted() {
+    return price() > discountedPrice();
   }
 }
