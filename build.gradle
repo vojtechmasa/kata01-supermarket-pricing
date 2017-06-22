@@ -1,17 +1,19 @@
-group 'vojtechmasa.com'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'findbugs'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+allprojects {
+    group 'vojtechmasa.com'
+    version '1.0-SNAPSHOT'
 }
 
-dependencies {
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: "$findbugsJsr305Version"
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'findbugs'
 
-    testCompile group: 'junit', name: 'junit', version: "$jUnitVersion"
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'com.google.code.findbugs', name: 'jsr305', version: "$findbugsJsr305Version"
+
+        testCompile group: 'junit', name: 'junit', version: "$jUnitVersion"
+    }
 }
