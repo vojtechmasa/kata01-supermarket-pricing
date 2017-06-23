@@ -1,9 +1,8 @@
 package com.vojtechmasa.supermarketpricing.product;
 
-import jdk.nashorn.internal.ir.annotations.Immutable;
-
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.concurrent.Immutable;
 import java.util.Objects;
 
 @Immutable

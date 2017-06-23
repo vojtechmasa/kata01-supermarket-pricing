@@ -1,7 +1,10 @@
 package com.vojtechmasa.supermarketpricing.discount;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
 @ParametersAreNonnullByDefault
 public class PayForLessGetMoreDiscount implements Discount {
   private final int getAmount;
