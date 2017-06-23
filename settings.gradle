@@ -1,3 +1,4 @@
 rootProject.name = 'kata01-supermarket-pricing'
 include 'core'
+include 'storage'
 

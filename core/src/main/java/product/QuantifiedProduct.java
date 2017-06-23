@@ -55,4 +55,8 @@ public class QuantifiedProduct {
   public boolean discounted() {
     return price() > discountedPrice();
   }
+
+  public boolean discrete() {
+    return product().discrete();
+  }
 }
