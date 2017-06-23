@@ -5,6 +5,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Collection;
 import java.util.Optional;
 
+//TODO implement delete operation
 @ParametersAreNonnullByDefault
 public interface ProductRepository {
   @Nonnull

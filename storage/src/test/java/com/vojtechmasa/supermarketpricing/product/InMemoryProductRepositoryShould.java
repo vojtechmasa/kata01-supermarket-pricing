@@ -26,4 +26,16 @@ public class InMemoryProductRepositoryShould {
         .orElseThrow(() -> new NoSuchElementException(productName + " is not present in the repo."));
     assertThat(retrievedProduct, is(equalTo(originalProduct)));
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void throwException_whileSavingAlreadySavedProduct() {
+    //GIVEN
+    InMemoryProductRepository inMemoryProductRepository = new InMemoryProductRepository();
+    String productName = "Argus Beer";
+    Product originalProduct = new Product(productName, 10, ProductUnit.PIECE);
+    inMemoryProductRepository.save(originalProduct);
+
+    //WHEN
+    inMemoryProductRepository.save(originalProduct);
+  }
 }
