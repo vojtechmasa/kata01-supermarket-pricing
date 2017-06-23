@@ -1,6 +1,6 @@
-package product;
+package vojtechmasa.com.product;
 
-import discount.NoDiscount;
+import vojtechmasa.com.discount.NoDiscount;
 import org.junit.Test;
 
 import javax.annotation.ParametersAreNonnullByDefault;

@@ -1,4 +1,4 @@
-package product;
+package vojtechmasa.com.product;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 

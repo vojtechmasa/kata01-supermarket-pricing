@@ -1,4 +1,4 @@
-package discount;
+package vojtechmasa.com.discount;
 
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
-package product;
+package vojtechmasa.com.product;
 
-import discount.Discount;
-import discount.NoDiscount;
+import vojtechmasa.com.discount.Discount;
+import vojtechmasa.com.discount.NoDiscount;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -31,7 +31,7 @@ public class QuantifiedProduct {
     boolean hasDecimalPart = quantity % 1 != 0;
 
     if (discrete && hasDecimalPart) {
-      throw new IllegalArgumentException("For this product you need integer quantity. Passed: " + quantity);
+      throw new IllegalArgumentException("For this vojtechmasa.com.product you need integer quantity. Passed: " + quantity);
     }
   }
 
