@@ -1,7 +1,7 @@
 package vojtechmasa.com.product;
 
-import vojtechmasa.com.discount.Discount;
-import vojtechmasa.com.discount.NoDiscount;
+import com.vojtechmasa.discount.Discount;
+import com.vojtechmasa.discount.NoDiscount;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;

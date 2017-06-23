@@ -1,4 +1,4 @@
-package vojtechmasa.com.discount;
+package com.vojtechmasa.discount;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
