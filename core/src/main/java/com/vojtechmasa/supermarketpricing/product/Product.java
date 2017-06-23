@@ -4,6 +4,7 @@ import jdk.nashorn.internal.ir.annotations.Immutable;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Objects;
 
 @Immutable
 @ParametersAreNonnullByDefault
@@ -36,5 +37,31 @@ public final class Product {
 
   public boolean discrete() {
     return productUnit().countingType() == CountingType.DISCRETE;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Product)) return false;
+    Product product = (Product) o;
+    return Double.compare(product.unitPrice, unitPrice) == 0 &&
+        Objects.equals(name, product.name) &&
+        productUnit == product.productUnit;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, unitPrice, productUnit);
+  }
+
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder("Product{");
+    sb.append("name='").append(name).append('\'');
+    sb.append(", unitPrice=").append(unitPrice);
+    sb.append(", productUnit=").append(productUnit);
+    sb.append(", discrete=").append(discrete());
+    sb.append('}');
+    return sb.toString();
   }
 }

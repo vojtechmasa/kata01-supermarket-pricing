@@ -6,6 +6,7 @@ import com.vojtechmasa.supermarketpricing.discount.NoDiscount;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.annotation.concurrent.Immutable;
+import java.util.Objects;
 
 @Immutable
 @ParametersAreNonnullByDefault
@@ -58,5 +59,34 @@ public class QuantifiedProduct {
 
   public boolean discrete() {
     return product().discrete();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof QuantifiedProduct)) return false;
+    QuantifiedProduct that = (QuantifiedProduct) o;
+    return Double.compare(that.quantity, quantity) == 0 &&
+        Objects.equals(product, that.product) &&
+        Objects.equals(discount, that.discount);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(product, quantity, discount);
+  }
+
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder("QuantifiedProduct{");
+    sb.append("product=").append(product);
+    sb.append(", quantity=").append(quantity);
+    sb.append(", discount=").append(discount);
+    sb.append(", price=").append(price());
+    sb.append(", discountedPrice=").append(discountedPrice());
+    sb.append(", discounted=").append(discounted());
+    sb.append(", discrete=").append(discrete());
+    sb.append('}');
+    return sb.toString();
   }
 }
