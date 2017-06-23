@@ -1,6 +1,4 @@
-package com.vojtechmasa.supermarektpricing.product;
-
-import com.vojtechmasa.supermarketpricing.product.Product;
+package com.vojtechmasa.supermarketpricing.product;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;

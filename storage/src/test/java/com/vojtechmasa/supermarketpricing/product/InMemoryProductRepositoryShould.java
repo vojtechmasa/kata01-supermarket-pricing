@@ -1,7 +1,5 @@
-package com.vojtechmasa.supermarektpricing.product;
+package com.vojtechmasa.supermarketpricing.product;
 
-import com.vojtechmasa.supermarketpricing.product.Product;
-import com.vojtechmasa.supermarketpricing.product.ProductUnit;
 import org.junit.Test;
 
 import javax.annotation.ParametersAreNonnullByDefault;
