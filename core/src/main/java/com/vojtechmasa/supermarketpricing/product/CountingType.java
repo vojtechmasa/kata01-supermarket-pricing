@@ -1,4 +1,4 @@
-package vojtechmasa.com.product;
+package com.vojtechmasa.supermarketpricing.product;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
