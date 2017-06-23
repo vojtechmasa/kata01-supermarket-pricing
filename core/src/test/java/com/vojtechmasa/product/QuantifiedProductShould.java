@@ -1,4 +1,4 @@
-package vojtechmasa.com.product;
+package com.vojtechmasa.product;
 
 import com.vojtechmasa.supermarketpricing.discount.NoDiscount;
 import com.vojtechmasa.supermarketpricing.product.Product;
